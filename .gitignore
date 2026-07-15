@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.env
+
+# Vector store & Chroma local data
+.chroma_db/
+chroma_db/
+*.db
+*.sqlite
+
+# Uploads & Temp Data
+uploads/
+scratch/
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Evaluation results cache
+*.png
+*.jpg
+
+
+# editor temp files
+*.swp
+*.swo
