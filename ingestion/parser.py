@@ -109,3 +109,5 @@ class DocumentParser:
 
 
 # TODO: add support for .rst and .html formats in a future iteration
+
+# Edge case: some scanned PDFs return empty text — handled via empty-page guard
