@@ -221,3 +221,5 @@ class ChromaVectorStore:
 
 
 # Chroma PersistentClient stores embeddings on disk — survives app restarts
+
+# In-memory cosine store activates when chromadb package is not installed
