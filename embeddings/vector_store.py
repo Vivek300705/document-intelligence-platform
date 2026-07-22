@@ -106,7 +106,7 @@ class ChromaVectorStore:
             if total_count == 0:
                 return []
 
-            n_results = min(top_k, total_count)
+            n_results = min(top_k, total_count)  # prevent n_results > collection size error
             kwargs = {"query_embeddings": [query_embedding], "n_results": n_results}
             if where_clause:
                 kwargs["where"] = where_clause
