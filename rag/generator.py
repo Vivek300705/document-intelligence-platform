@@ -133,3 +133,5 @@ class LLMGenerator:
 # Provider priority: Groq (free + fast) > OpenAI > local extractive fallback
 
 # Local fallback synthesizes extractive summary from top-3 retrieved chunks
+
+# Bug fix: retrieved_chunks must be forwarded to fallback on API error
