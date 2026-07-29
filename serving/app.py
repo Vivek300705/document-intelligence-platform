@@ -28,7 +28,7 @@ app = FastAPI(
 # Enable CORS for Streamlit / Frontend interaction
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"]  # open CORS for Streamlit frontend communication,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
