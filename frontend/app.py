@@ -335,3 +335,5 @@ with tab_store:
 # st.cache_resource caches vector store and extraction pipeline across reruns
 
 # UI API key input overrides .env keys — useful for live demos without redeployment
+
+# st.secrets injected into os.environ at startup for Streamlit Cloud compatibility
