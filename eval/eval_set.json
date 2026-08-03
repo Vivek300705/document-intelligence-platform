@@ -1,0 +1,86 @@
+[
+  {
+    "doc_id": "test_doc_01",
+    "source": "master_services_agreement.txt",
+    "text": "Master Services Agreement between Tech Solutions Inc. and Acme Corporation. Effective Date: January 15, 2025. Total Contract Amount: $150,000. Termination notice required: 30 days written notice. Payment terms are Net 30 days from invoice date. Contact person: John Smith (jsmith@acmecorp.com, 555-123-4567).",
+    "doc_type": "Contract",
+    "qa_pairs": [
+      {
+        "question": "What is the total contract amount in the agreement?",
+        "expected_answer_keywords": ["150,000", "$150,000"],
+        "relevant_page": 1
+      },
+      {
+        "question": "When is the effective date of the agreement?",
+        "expected_answer_keywords": ["January 15, 2025", "January 15"],
+        "relevant_page": 1
+      },
+      {
+        "question": "How many days notice is required for termination?",
+        "expected_answer_keywords": ["30 days", "30"],
+        "relevant_page": 1
+      }
+    ],
+    "expected_entities": {
+      "organizations": ["Tech Solutions Inc.", "Acme Corporation"],
+      "persons": ["John Smith"],
+      "dates": ["January 15, 2025"],
+      "amounts": ["$150,000"]
+    }
+  },
+  {
+    "doc_id": "test_doc_02",
+    "source": "financial_report_q3.txt",
+    "text": "Apex Financial Group Q3 2025 Earnings Report. Published: October 10, 2025. Q3 Revenue reached $42.5M, representing a 14% growth year-over-year. EBITDA was $12.1M. Operating expenses were $18.4M. Diluted EPS was $0.85 per share. Contact CFO Sarah Jenkins for inquiries.",
+    "doc_type": "Financial Report",
+    "qa_pairs": [
+      {
+        "question": "What was the Q3 revenue for Apex Financial Group?",
+        "expected_answer_keywords": ["42.5M", "$42.5M"],
+        "relevant_page": 1
+      },
+      {
+        "question": "Who is the CFO listed in the report?",
+        "expected_answer_keywords": ["Sarah Jenkins"],
+        "relevant_page": 1
+      },
+      {
+        "question": "What was the EBITDA reported in Q3?",
+        "expected_answer_keywords": ["12.1M", "$12.1M"],
+        "relevant_page": 1
+      }
+    ],
+    "expected_entities": {
+      "organizations": ["Apex Financial Group"],
+      "persons": ["Sarah Jenkins"],
+      "dates": ["October 10, 2025"],
+      "amounts": ["$42.5M", "$12.1M", "$18.4M", "$0.85"]
+    }
+  },
+  {
+    "doc_id": "test_doc_03",
+    "source": "resume_alex_taylor.txt",
+    "text": "Alex Taylor - Machine Learning Engineer. Email: alex.taylor@email.com. Phone: 555-987-6543. Education: M.S. Artificial Intelligence from Stanford University (2022). Skills: Python, PyTorch, FastAPI, ChromaDB, HuggingFace. Work Experience: Senior ML Engineer at DataCorp Inc from 2022 to present, building RAG systems.",
+    "doc_type": "Resume",
+    "qa_pairs": [
+      {
+        "question": "Where did Alex Taylor obtain their Master's degree?",
+        "expected_answer_keywords": ["Stanford University", "Stanford"],
+        "relevant_page": 1
+      },
+      {
+        "question": "What is Alex Taylor's current position?",
+        "expected_answer_keywords": ["Senior ML Engineer", "ML Engineer", "Machine Learning Engineer"],
+        "relevant_page": 1
+      }
+    ],
+    "expected_entities": {
+      "organizations": ["Stanford University", "DataCorp Inc"],
+      "persons": ["Alex Taylor"],
+      "dates": ["2022"],
+      "amounts": []
+    }
+  }
+]
+
+
