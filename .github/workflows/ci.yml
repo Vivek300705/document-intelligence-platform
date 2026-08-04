@@ -1,0 +1,35 @@
+name: Document Intelligence & RAG Platform CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pytest httpx scikit-learn pydantic fastapi uvicorn requests python-dotenv pypdf python-docx
+
+    - name: Run Pytest Test Suite
+      run: |
+        pytest -v tests/
+
+    - name: Run Benchmark Evaluation Script
+      run: |
+        python -m eval.evaluate
+
+
+# CI runs on every push — ensures chunking, retrieval and extraction never regress
