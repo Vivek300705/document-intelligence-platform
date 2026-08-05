@@ -33,6 +33,22 @@ try:
 except Exception:
     pass
 
+# Force reload custom modules to prevent Streamlit Cloud caching issues
+import importlib
+import ingestion.parser
+import ingestion.chunker
+import embeddings.vector_store
+import rag.generator
+import rag.pipeline
+import extraction.pipeline
+
+importlib.reload(ingestion.parser)
+importlib.reload(ingestion.chunker)
+importlib.reload(embeddings.vector_store)
+importlib.reload(rag.generator)
+importlib.reload(rag.pipeline)
+importlib.reload(extraction.pipeline)
+
 from ingestion.parser import DocumentParser
 from ingestion.chunker import TextChunker
 from embeddings.vector_store import ChromaVectorStore
