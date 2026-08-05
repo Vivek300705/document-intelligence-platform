@@ -101,7 +101,7 @@ st.markdown("""
 
 
 @st.cache_resource
-def get_services(version=3):
+def get_services(version=4):
     """Initializes and caches singleton services (embedding + extraction only)."""
     vector_store = ChromaVectorStore()
     chunker = TextChunker(chunk_size=500, chunk_overlap=50)
@@ -109,7 +109,7 @@ def get_services(version=3):
     return vector_store, chunker, extraction_pipeline
 
 
-vector_store, chunker, extraction_pipeline = get_services(version=3)
+vector_store, chunker, extraction_pipeline = get_services(version=4)
 
 # --- Sidebar ---
 st.sidebar.title("📄 Document Hub")
