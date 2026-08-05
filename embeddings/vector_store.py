@@ -176,20 +176,23 @@ class ChromaVectorStore:
         """Returns unique documents stored in vector database."""
         docs_summary = {}
         if self.collection is not None:
-            all_data = self.collection.get(include=["metadatas"])
-            metas = all_data.get("metadatas", [])
-            for m in metas:
-                if not m:
-                    continue
-                d_id = m.get("doc_id")
-                if d_id and d_id not in docs_summary:
-                    docs_summary[d_id] = {
-                        "doc_id": d_id,
-                        "source": m.get("source", "Unknown"),
-                        "chunk_count": 0
-                    }
-                if d_id in docs_summary:
-                    docs_summary[d_id]["chunk_count"] += 1
+            try:
+                all_data = self.collection.get(include=["metadatas"])
+                metas = all_data.get("metadatas", [])
+                for m in metas:
+                    if not m:
+                        continue
+                    d_id = m.get("doc_id")
+                    if d_id and d_id not in docs_summary:
+                        docs_summary[d_id] = {
+                            "doc_id": d_id,
+                            "source": m.get("source", "Unknown"),
+                            "chunk_count": 0
+                        }
+                    if d_id in docs_summary:
+                        docs_summary[d_id]["chunk_count"] += 1
+            except Exception as e:
+                logger.warning(f"Error listing documents from Chroma collection: {e}")
         else:
             for item in self._memory_store:
                 m = item["metadata"]
