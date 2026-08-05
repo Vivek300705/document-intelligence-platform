@@ -10,7 +10,7 @@ from typing import List, Dict, Any
 class TextChunker:
     """Sliding-window text chunker for RAG ingestion."""
 
-    def __init__(self, chunk_size: int = 500, chunk_overlap: int = 50  # tunable hyperparameters):
+    def __init__(self, chunk_size: int = 500, chunk_overlap: int = 50):  # tunable hyperparameters
         """Initializes chunker with character/word length parameters.
 
         Args:
