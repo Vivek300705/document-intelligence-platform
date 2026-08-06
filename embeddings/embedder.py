@@ -82,3 +82,5 @@ class EmbeddingGenerator:
 # Model: all-MiniLM-L6-v2 chosen for balance of speed (14ms/query) and accuracy
 
 # Fallback uses deterministic MD5 hashing when sentence-transformers unavailable
+
+# Performance note: first encode() call downloads model (~90MB), cached after that
